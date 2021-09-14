@@ -10,6 +10,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import TaskAppstone2 from "./components/TaskAppstone2";
 
 const useStyles = makeStyles({
   table: {
@@ -60,33 +61,6 @@ export default function App() {
   ]);
 
   return (
-    <Container>
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>First Name</TableCell>
-              <TableCell align="right">Last Name</TableCell>
-              <TableCell align="right">Order</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.map((row) => (
-              <TableRow key={row.firstName}>
-                <TableCell component="th" scope="row">
-                  {row.firstName}
-                </TableCell>
-                <TableCell align="right">{row.lastName}</TableCell>
-
-                <TableCell align="right">
-                  <ArrowUpwardIcon onClick={() => handleUpClick(row)} />
-                  <ArrowDownwardIcon onClick={() => handleDownClick(row)} />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Container>
+    <TaskAppstone2 />
   );
 }
